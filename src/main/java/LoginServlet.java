@@ -3,7 +3,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.util.regex.Pattern;
 
 import static java.lang.String.valueOf;
@@ -17,7 +16,9 @@ public class LoginServlet extends HttpServlet {
         String userName = request.getParameter("name");
         String password = request.getParameter("password");
         namePattern = namePattern.compile("^[A-Z][A-Za-z]{2,}");
-        if (namePattern.matches(valueOf(namePattern),userName) && userName.equals("Vaibhav") && password.equals("Vaibhav@123"))
+        passwordPattern = passwordPattern.compile("(?=.*[A-Z].*)(?=.*[0-9].*)([a-zA-Z0-9]{4,}[!@#$%^&*()_+][a-zA-Z0-9]{3,})");
+        if (namePattern.matches(valueOf(namePattern),userName) && passwordPattern.matches(valueOf(passwordPattern),password) &&
+                userName.equals("Vaibhav") && password.equals("Vaibhav@123"))
             response.sendRedirect("welcome.jsp");
     }
 }
