@@ -9,17 +9,19 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body style="color: darkblue; background-color: lightskyblue; font-size: 30px;">
-    <form method="post" action="login.jsp">
-        <h1 align="Center";>Hello!!!</h1>
-        <h3 align="Center";><br>
-            Welcome,<%=  request.getParameter("name")%><br><br>
-            Your registration id is <%= request.getAttribute("id")%><br><br>
-            Your entry date and time is <%= request.getAttribute("date")%><br><br>
-            Your email address is <%= request.getAttribute("email")%><br><br>
-            <input type="submit" name="submit" value="Logout" style="font-size: 25px; margin-top: 30px;">
-        </h3>
-    </form>
+<body>
+<div class="loginBox">
+<form action="login.jsp" method="post">
+    <h1>Welcome...</h1>
+    <h3>Welcome,<%=  request.getParameter("name")%><br><br>
+    Your registration id is <%= request.getAttribute("id")%><br><br>
+    Your entry date and time is <%= request.getAttribute("date")%><br><br>
+    Your email address is <%= request.getAttribute("email")%><br><br>
+    </h3>
+    <input type="submit" name="submit" value="Login">
+</form>
+</div>
 </body>
 </html>
