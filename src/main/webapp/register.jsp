@@ -14,7 +14,7 @@
 <body>
 <div class="loginBox">
     <h1>Register Here</h1>
-    <form action="register" method="post">
+    <form action="RegisterServlet" method="post">
         <p>Username</p>
         <input type="text" name="name" placeholder="Enter Username">
         <p>Password</p>
